@@ -31,7 +31,7 @@
 `json2Symbol.py`文件为`json`转`Symbol`枚举,`json`文件来自于[FluentSystemIcons-Resizable.json](https://github.com/microsoft/fluentui-system-icons/blob/main/fonts/FluentSystemIcons-Resizable.json)
 
 ## 简单使用🛠️
-请先安装`nuget`包
+请先安装`nuget`包->`KitUIN.FluentIcon`
 
 在需要使用的`Xaml`文件的顶部添加
 
