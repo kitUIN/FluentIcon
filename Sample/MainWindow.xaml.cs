@@ -38,6 +38,9 @@ namespace Sample
             {
                 ShowIcon.Symbol = icon.Symbol;
                 ShowIconName.Text = icon.Name;
+                TopBlock.Text = "\"xmlns:icons=\"using:FluentIcon\"";
+                GlyphBlock.Text = icon.Glyph;
+                XamlBlock.Text = $"<icons:FluentIcon Symbol=\"{icon.Symbol}\" />";
             }
         }
 
