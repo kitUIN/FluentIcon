@@ -13,6 +13,9 @@
   <a href="https://github.com/kitUIN/FluentIcon/releases">
     <img src="https://img.shields.io/github/v/release/kitUIN/FluentIcon" alt="release">
   </a>
+  <a href="https://www.nuget.org/packages/KitUIN.FluentIcon">
+    <img src="https://img.shields.io/nuget/v/KitUIN.FluentIcon?color=blue" alt="nuget">
+  </a>
 </p> 
 <div align="center">
   
