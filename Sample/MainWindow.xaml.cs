@@ -9,6 +9,7 @@ using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -26,6 +27,7 @@ namespace Sample
     public sealed partial class MainWindow : Window
     {
         public ObservableCollection<FluentIconSymbolTest> fluentIcons = new ObservableCollection<FluentIconSymbolTest>();
+        private bool isQuery = false;
         public MainWindow()
         {
             this.InitializeComponent();
@@ -50,6 +52,50 @@ namespace Sample
             {
                 fluentIcons.Add(new FluentIconSymbolTest(en));
             }
+        }
+
+        private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            if(args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                string text = sender.Text.ToLower();
+                Debug.WriteLine(text);
+                SearchBox.ItemsSource = fluentIcons
+                    .AsParallel()
+                    .Where(x => x.Name.ToLower().Contains(text))
+                    .ToList();
+            }
+        }
+
+        private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBoxQuerySubmittedEventArgs args)
+        {
+            isQuery = true;
+            if (args.ChosenSuggestion is FluentIconSymbolTest icon)
+            {
+                ShowIcon.Symbol = icon.Symbol;
+                ShowIconName.Text = icon.Name;
+                TopBlock.Text = "\"xmlns:icons=\"using:FluentIcon\"";
+                GlyphBlock.Text = icon.Glyph;
+                XamlBlock.Text = $"<icons:FluentIcon Symbol=\"{icon.Symbol}\" />";
+            }
+            else
+            {
+                if (fluentIcons.FirstOrDefault(x => x.Name.ToLower() == sender.Text.ToLower()) is FluentIconSymbolTest symbol)
+                {
+                    ShowIcon.Symbol = symbol.Symbol;
+                    ShowIconName.Text = symbol.Name;
+                    TopBlock.Text = "\"xmlns:icons=\"using:FluentIcon\"";
+                    GlyphBlock.Text = symbol.Glyph;
+                    XamlBlock.Text = $"<icons:FluentIcon Symbol=\"{symbol.Symbol}\" />";
+                }
+            }
+            
+        }
+
+        private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            isQuery = false;
+            sender.Text = ((FluentIconSymbolTest)args.SelectedItem).Name;
         }
     }
 }

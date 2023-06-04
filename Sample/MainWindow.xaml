@@ -20,7 +20,30 @@
                     Padding="10"
                     Background="{StaticResource CardBackgroundFillColorDefaultBrush}"
                     CornerRadius="10">
-                    <AutoSuggestBox PlaceholderText="Type a icon name" />
+                    <AutoSuggestBox
+                        x:Name="SearchBox"
+                        PlaceholderText="Type a icon name"
+                        QuerySubmitted="AutoSuggestBox_QuerySubmitted"
+                        SuggestionChosen="AutoSuggestBox_SuggestionChosen"
+                        TextChanged="AutoSuggestBox_TextChanged">
+                        <AutoSuggestBox.ItemTemplate>
+                            <DataTemplate x:DataType="local:FluentIconSymbolTest">
+                                <StackPanel
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Spacing="10">
+                                    <icons:FluentIcon FontSize="30" Symbol="{x:Bind Symbol}" />
+                                    <TextBlock
+                                        Width="200"
+                                        VerticalAlignment="Center"
+                                        FontSize="18"
+                                        Text="{x:Bind Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </AutoSuggestBox.ItemTemplate>
+
+                    </AutoSuggestBox>
                 </Border>
                 <Border
                     Padding="10"
