@@ -6,7 +6,7 @@
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
 	  <PackageId>KitUIN.FluentIcon</PackageId>
-	  <Version>1.1.201</Version>
+	  <Version>1.1.203</Version>
 	  <Authors>kitUIN</Authors>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <RepositoryUrl>https://github.com/kitUIN/FluentIcon</RepositoryUrl>
