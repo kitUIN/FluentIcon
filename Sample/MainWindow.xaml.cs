@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 
@@ -31,9 +32,7 @@ namespace Sample
         public MainWindow()
         {
             this.InitializeComponent();
-            
-        }
-
+        } 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach(FluentIconSymbolTest icon in e.AddedItems)
@@ -59,11 +58,22 @@ namespace Sample
             if(args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
             {
                 string text = sender.Text.ToLower();
-                Debug.WriteLine(text);
-                SearchBox.ItemsSource = fluentIcons
+                if(text.Length >=2 && text[..2] == "\\u")
+                {
+                    Debug.WriteLine("Glyph " + text);
+                    SearchBox.ItemsSource = fluentIcons
+                    .AsParallel()
+                    .Where(x => x.Glyph.ToLower().Contains(text))
+                    .ToList();
+                }
+                else
+                {
+                    Debug.WriteLine("Name " + text);
+                    SearchBox.ItemsSource = fluentIcons
                     .AsParallel()
                     .Where(x => x.Name.ToLower().Contains(text))
                     .ToList();
+                }
             }
         }
 
@@ -89,13 +99,17 @@ namespace Sample
                     XamlBlock.Text = $"<icons:FluentIcon Symbol=\"{symbol.Symbol}\" />";
                 }
             }
-            
         }
 
         private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
         {
             isQuery = false;
             sender.Text = ((FluentIconSymbolTest)args.SelectedItem).Name;
+        }
+
+        private void FluentIcon_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

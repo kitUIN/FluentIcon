@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:icons="using:FluentIcon"
+    xmlns:labs="using:CommunityToolkit.Labs.WinUI"
     xmlns:local="using:Sample"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -35,10 +36,14 @@
                                     Spacing="10">
                                     <icons:FluentIcon FontSize="30" Symbol="{x:Bind Symbol}" />
                                     <TextBlock
-                                        Width="200"
+                                        Width="270"
                                         VerticalAlignment="Center"
-                                        FontSize="18"
+                                        FontSize="17"
                                         Text="{x:Bind Name}" />
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        FontSize="14"
+                                        Text="{x:Bind Glyph}" />
                                 </StackPanel>
                             </DataTemplate>
                         </AutoSuggestBox.ItemTemplate>

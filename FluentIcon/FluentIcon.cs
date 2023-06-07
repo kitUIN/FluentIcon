@@ -20,7 +20,7 @@ namespace FluentIcon
                 typeof(FontIcon),
                 new PropertyMetadata(default, new PropertyChangedCallback(OnSymbolChanged)));
 
-        public FluentIcon()
+        public FluentIcon(): base()
         {
             FontFamily = new Microsoft.UI.Xaml.Media.FontFamily("ms-appx:///Assets/FluentSystemIcons-Resizable.ttf#FluentSystemIcons-Resizable");
         }

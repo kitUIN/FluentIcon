@@ -13,9 +13,6 @@
   <a href="https://github.com/kitUIN/FluentIcon/releases">
     <img src="https://img.shields.io/github/v/release/kitUIN/FluentIcon" alt="release">
   </a>
-  <a href="https://www.nuget.org/packages/KitUIN.FluentIcon">
-    <img src="https://img.shields.io/nuget/v/KitUIN.FluentIcon?color=blue" alt="nuget">
-  </a>
 </p> 
 <div align="center">
   
@@ -31,7 +28,7 @@
 `json2Symbol.py`文件为`json`转`Symbol`枚举,`json`文件来自于[FluentSystemIcons-Resizable.json](https://github.com/microsoft/fluentui-system-icons/blob/main/fonts/FluentSystemIcons-Resizable.json)
 
 ## 简单使用🛠️
-请先安装`nuget`包->`KitUIN.FluentIcon`
+请先安装`nuget`包
 
 在需要使用的`Xaml`文件的顶部添加
 
@@ -51,8 +48,9 @@ xmlns:icons="using:FluentIcon"
 以下3选1
 1. 安装[Character-Map-UWP](https://www.microsoft.com/store/apps/9wzdncrdxf41?cid=storebadge&ocid=badge),将字体文件拖入,进行挑选
 2. 运行`Sample`程序,进行挑选
+   - 在搜索框用`\u`开头 是使用`Glyph`检索
+   - 其他则为使用`名称`检索
 3. Fluent UI System Icons List
    - [View the full list of regular icons](https://github.com/microsoft/fluentui-system-icons/blob/main/icons_regular.md)
    - [View the full list of filled icons](https://github.com/microsoft/fluentui-system-icons/blob/main/icons_filled.md)
-
 
