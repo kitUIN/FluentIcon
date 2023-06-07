@@ -49,7 +49,11 @@ xmlns:icons="using:FluentIcon"
 1. 安装[Character-Map-UWP](https://www.microsoft.com/store/apps/9wzdncrdxf41?cid=storebadge&ocid=badge),将字体文件拖入,进行挑选
 2. 运行`Sample`程序,进行挑选
    - 在搜索框用`\u`开头 是使用`Glyph`检索
+   ![image](https://github.com/kitUIN/FluentIcon/assets/68675068/59b71d84-1028-4974-9874-04b56829562f)
+
    - 其他则为使用`名称`检索
+   ![image](https://github.com/kitUIN/FluentIcon/assets/68675068/473707b3-dad2-4858-918d-a61bbb744689)
+
 3. Fluent UI System Icons List
    - [View the full list of regular icons](https://github.com/microsoft/fluentui-system-icons/blob/main/icons_regular.md)
    - [View the full list of filled icons](https://github.com/microsoft/fluentui-system-icons/blob/main/icons_filled.md)
