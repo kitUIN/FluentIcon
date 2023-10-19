@@ -1,4 +1,4 @@
-using FluntIcon;
+using FluentIcon.WinUI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -27,7 +27,7 @@ namespace Sample
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        public ObservableCollection<FluentIconSymbolTest> fluentIcons = new ObservableCollection<FluentIconSymbolTest>();
+        public ObservableCollection< FluentIconSymbolTest>  fluentIcons = new ObservableCollection<FluentIconSymbolTest>();
         private bool isQuery = false;
         public MainWindow()
         {
@@ -39,15 +39,15 @@ namespace Sample
             {
                 ShowIcon.Symbol = icon.Symbol;
                 ShowIconName.Text = icon.Name;
-                TopBlock.Text = "\"xmlns:icons=\"using:FluentIcon\"";
+                TopBlock.Text = "\"xmlns:icons=\"using: FluentRegularIcon\"";
                 GlyphBlock.Text = icon.Glyph;
-                XamlBlock.Text = $"<icons:FluentIcon Symbol=\"{icon.Symbol}\" />";
+                XamlBlock.Text = $"<icons: FluentRegularIcon Symbol=\"{icon.Symbol}\" />";
             }
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach (FluentIconSymbol en in Enum.GetValues(typeof(FluentIconSymbol)))
+            foreach ( FluentRegularIconSymbol en in Enum.GetValues(typeof( FluentRegularIconSymbol)))
             {
                 fluentIcons.Add(new FluentIconSymbolTest(en));
             }
@@ -84,19 +84,19 @@ namespace Sample
             {
                 ShowIcon.Symbol = icon.Symbol;
                 ShowIconName.Text = icon.Name;
-                TopBlock.Text = "\"xmlns:icons=\"using:FluentIcon\"";
+                TopBlock.Text = "\"xmlns:icons=\"using: FluentIcon.WinUI\"";
                 GlyphBlock.Text = icon.Glyph;
-                XamlBlock.Text = $"<icons:FluentIcon Symbol=\"{icon.Symbol}\" />";
+                XamlBlock.Text = $"<icons: FluentRegularIcon Symbol=\"{icon.Symbol}\" />";
             }
             else
             {
-                if (fluentIcons.FirstOrDefault(x => x.Name.ToLower() == sender.Text.ToLower()) is FluentIconSymbolTest symbol)
+                if (fluentIcons.FirstOrDefault(x => x.Name.ToLower() == sender.Text.ToLower()) is  FluentIconSymbolTest symbol)
                 {
                     ShowIcon.Symbol = symbol.Symbol;
                     ShowIconName.Text = symbol.Name;
-                    TopBlock.Text = "\"xmlns:icons=\"using:FluentIcon\"";
+                    TopBlock.Text = "\"xmlns:icons=\"using: FluentIcon.WinUI\"";
                     GlyphBlock.Text = symbol.Glyph;
-                    XamlBlock.Text = $"<icons:FluentIcon Symbol=\"{symbol.Symbol}\" />";
+                    XamlBlock.Text = $"<icons: FluentRegularIcon Symbol=\"{symbol.Symbol}\" />";
                 }
             }
         }
@@ -107,7 +107,7 @@ namespace Sample
             sender.Text = ((FluentIconSymbolTest)args.SelectedItem).Name;
         }
 
-        private void FluentIcon_Loaded(object sender, RoutedEventArgs e)
+        private void  FluentRegularIcon_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

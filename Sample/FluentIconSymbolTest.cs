@@ -1,4 +1,5 @@
-﻿using FluntIcon;
+﻿
+using FluentIcon.WinUI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,12 +13,12 @@ namespace Sample
     {
         public string Name { get; set; }
         public string Glyph { get; set; }
-        public FluentIconSymbol Symbol { get; set; }
-        public FluentIconSymbolTest(FluentIconSymbol symbol)
+        public FluentRegularIconSymbol Symbol { get; set; }
+        public FluentIconSymbolTest(FluentRegularIconSymbol symbol)
         {
             this.Symbol = symbol;
             this.Name = symbol.ToString();
-            this.Glyph = String2Unicode(((char)symbol).ToString());
+            this.Glyph = char.ConvertFromUtf32((int)symbol);
         }
         public static string String2Unicode(string source)
         {
