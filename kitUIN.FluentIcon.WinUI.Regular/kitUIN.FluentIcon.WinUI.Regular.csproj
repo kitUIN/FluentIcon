@@ -11,6 +11,7 @@
 	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <PackageProjectUrl>https://github.com/kitUIN/FluentIcon</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/kitUIN/FluentIcon</RepositoryUrl>
 	  <Description>✨ Windows App SDK Fluent-System-Icon Control ✨</Description>
 	  <Copyright>Copyright 2023</Copyright>
 	  <PackageTags>KitUIN;wasdk;fluent;icon;winui</PackageTags>
