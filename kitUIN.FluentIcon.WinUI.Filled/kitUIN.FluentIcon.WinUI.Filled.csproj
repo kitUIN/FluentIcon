@@ -15,7 +15,6 @@
 	  <Description>✨ Windows App SDK Fluent-System-Icon Control ✨</Description>
 	  <Copyright>Copyright 2023</Copyright>
 	  <PackageTags>KitUIN;wasdk;fluent;icon;winui</PackageTags>
-	  <ContentTargetFolders>lib\$(TargetFramework)\$(PackageId)\</ContentTargetFolders>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +25,7 @@
   <ItemGroup>
     <Content Include="Assets\FluentSystemIcons-Filled.ttf">
 		<Pack>true</Pack>
+		<PackagePath>lib\$(TargetFramework)\$(PackageId)\</PackagePath>
 	</Content>
   </ItemGroup>
 </Project>
