@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.19041</TargetFramework>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <RootNamespace>FluentIcon.WinUI</RootNamespace>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
@@ -15,6 +15,7 @@
 	  <Description>✨ Windows App SDK Fluent-System-Icon Control ✨</Description>
 	  <Copyright>Copyright 2023</Copyright>
 	  <PackageTags>KitUIN;wasdk;fluent;icon;winui</PackageTags>
+	  <ContentTargetFolders>lib\$(TargetFramework)\$(PackageId)\</ContentTargetFolders>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,8 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Assets\FluentSystemIcons-Filled.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Assets\FluentSystemIcons-Filled.ttf">
+		<Pack>true</Pack>
+	</Content>
   </ItemGroup>
 </Project>
