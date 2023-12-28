@@ -25,7 +25,7 @@
   <ItemGroup>
     <Content Include="Assets\FluentSystemIcons-Filled.ttf">
 		<Pack>true</Pack>
-		<PackagePath>lib\$(TargetFramework)\$(PackageId)\</PackagePath>
+		<PackagePath>lib\$(TargetFramework)\$(PackageId)\Assets</PackagePath>
 	</Content>
   </ItemGroup>
 </Project>
