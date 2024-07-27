@@ -1,0 +1,3 @@
+﻿<Project>
+    <Import Project="..\build\kitUIN.FluentIcon.WinUI.Filled.targets"/>
+</Project>

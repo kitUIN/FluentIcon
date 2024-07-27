@@ -1,0 +1,9 @@
+﻿<Project>
+	<Target Name="CopyFluentSystemIcons-Filled" BeforeTargets="Build">
+		<Copy SourceFiles="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Filled\Assets\FluentSystemIcons-Filled.ttf" DestinationFolder="Assets\" />
+	</Target>
+
+	<ItemGroup Condition="'$(OutputType)' == 'Library'">
+		<Content Remove="Assets\FluentSystemIcons-Filled.ttf"/>
+	</ItemGroup>
+</Project>

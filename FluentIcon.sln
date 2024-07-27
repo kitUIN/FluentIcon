@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kitUIN.FluentIcon.WinUI.Regular", "kitUIN.FluentIcon.WinUI.Regular\kitUIN.FluentIcon.WinUI.Regular.csproj", "{CCD23387-642A-4FE8-B0F7-5BBB1EFF825F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kitUIN.FluentIcon.WinUI.Filled", "kitUIN.FluentIcon.WinUI.Filled\kitUIN.FluentIcon.WinUI.Filled.csproj", "{D5AB7C22-E160-4A90-9AE2-BDF7BB154A2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kitUIN.FluentIcon.WinUI.Filled", "kitUIN.FluentIcon.WinUI.Filled\kitUIN.FluentIcon.WinUI.Filled.csproj", "{D5AB7C22-E160-4A90-9AE2-BDF7BB154A2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
