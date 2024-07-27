@@ -35,22 +35,7 @@
 - [KitUIN.FluentIcon.WinUI.Regular](https://www.nuget.org/packages/KitUIN.FluentIcon.WinUI.Regular/)
 - [KitUIN.FluentIcon.WinUI.Filled](https://www.nuget.org/packages/KitUIN.FluentIcon.WinUI.Filled/)
 
-在`.csproj`中按如下修改
-```diff
-<ItemGroup>
-- <PackageReference Include="kitUIN.FluentIcon.WinUI.Filled" Version="1.2.224.2" />
-+ <PackageReference Include="kitUIN.FluentIcon.WinUI.Filled" Version="1.2.224.2" GeneratePathProperty="true" />
-- <PackageReference Include="kitUIN.FluentIcon.WinUI.Regular" Version="1.2.224.2" />
-+ <PackageReference Include="kitUIN.FluentIcon.WinUI.Regular" Version="1.2.224.2"  GeneratePathProperty="true" />
-  <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
-  <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
-  <PackageReference Include="ShadowViewer.Plugin.Local" Version="1.0.3" />
-</ItemGroup>
-+ <Target Name="CopyPackageFiles" BeforeTargets="Build">
-+   <Copy SourceFiles="$(PkgkitUIN_FluentIcon_WinUI_Regular)\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Regular\Assets\FluentSystemIcons-Regular.ttf" DestinationFolder="Assets\" />
-+   <Copy SourceFiles="$(PkgkitUIN_FluentIcon_WinUI_Filled)\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Filled\Assets\FluentSystemIcons-Filled.ttf" DestinationFolder="Assets\" />
-+ </Target>
-```
+
 在需要使用的`Xaml`文件的顶部添加
 
 ```
