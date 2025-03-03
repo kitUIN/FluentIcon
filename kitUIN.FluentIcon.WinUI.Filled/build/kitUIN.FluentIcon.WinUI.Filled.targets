@@ -1,12 +1,12 @@
 ﻿<Project>
 	<ItemGroup Condition="'$(OutputType)' == 'WinExe'">
-		<Content Include="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Filled\**\*.ttf" >
+		<None Include="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Filled\**\*.ttf" >
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</Content>
+		</None>
 	</ItemGroup>
 	<ItemGroup Condition="'$(OutputType)' != 'WinExe'">
-		<Content Include="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Filled\**\*.ttf" >
+		<None Include="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Filled\**\*.ttf" >
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
-		</Content>
+		</None>
 	</ItemGroup>
 </Project>
