@@ -20,19 +20,21 @@ public class FluentFilledIcon : FontIcon
     /// </summary>
     public static readonly DependencyProperty AutoFontSizeProperty =
         DependencyProperty.Register(nameof(AutoFontSize), typeof(double), typeof(FluentFilledIcon),
-            new PropertyMetadata(20.0, OnAutoFontSizeChanged));
+            new PropertyMetadata(20, OnAutoFontSizeChanged));
 
     public double AutoFontSize
     {
         get => (double)GetValue(AutoFontSizeProperty);
-        set => SetValue(AutoFontSizeProperty, value);
+        set 
+        {
+            SetValue(AutoFontSizeProperty, value);
+            FontSize = value + 3;
+        }
     }
 
     private static void OnAutoFontSizeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        if (d is not FluentFilledIcon icon) return;
-        var newSize = (double)e.NewValue;
-        icon.FontSize = newSize + 3;
+        
     }
     public FluentFilledIcon() : base()
     {

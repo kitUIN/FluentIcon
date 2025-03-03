@@ -5,7 +5,7 @@
         <RootNamespace>FluentIcon.WinUI</RootNamespace>
         <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
         <UseWinUI>true</UseWinUI>
-        <Version>1.1.269</Version>
+        <Version>1.1.270</Version>
         <PackageId>kitUIN.FluentIcon.WinUI.Regular</PackageId>
         <Authors>kitUIN</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -13,7 +13,7 @@
         <PackageProjectUrl>https://github.com/kitUIN/FluentIcon</PackageProjectUrl>
         <RepositoryUrl>https://github.com/kitUIN/FluentIcon</RepositoryUrl>
         <Description>✨ Windows App SDK Fluent-System-Icon Control ✨</Description>
-        <Copyright>Copyright 2023</Copyright>
+        <Copyright>Copyright 2023-2025</Copyright>
         <PackageTags>KitUIN;wasdk;fluent;icon;winui</PackageTags>
         <PackageOutputPath>..\..\NugetPackages</PackageOutputPath>
         <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
