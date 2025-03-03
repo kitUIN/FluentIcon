@@ -45,8 +45,8 @@ xmlns:icons="using:FluentIcon.WinUI"
 随后使用
 
 ```xml
-<icons:FluentRegularIcon Symbol="" />
-<icons:FluentFilledIcon Symbol="" />
+<icons:FluentRegularIcon AutoFontSize="20" Symbol="" />
+<icons:FluentFilledIcon  AutoFontSize="20" Symbol="" />
 ```
 
 选择你需要的图标,填入`Symbol`中
