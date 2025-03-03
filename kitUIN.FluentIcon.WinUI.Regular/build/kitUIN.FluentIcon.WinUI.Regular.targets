@@ -1,9 +1,12 @@
 ﻿<Project>
-	<Target Name="CopyFluentSystemIcons-Regular" BeforeTargets="Build">
-		<Copy SourceFiles="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Regular\Assets\FluentSystemIcons-Regular.ttf" DestinationFolder="Assets\" />
-	</Target>
-
-	<ItemGroup Condition="'$(OutputType)' == 'Library'">
-		<Content Remove="Assets\FluentSystemIcons-Regular.ttf"/>
+	<ItemGroup Condition="'$(OutputType)' == 'WinExe'">
+		<Content Include="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Regular\**\*.ttf" >
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup Condition="'$(OutputType)' != 'WinExe'">
+		<Content Include="$(MSBuildThisFileDirectory)..\lib\net6.0-windows10.0.19041\kitUIN.FluentIcon.WinUI.Regular\**\*.ttf" >
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 </Project>

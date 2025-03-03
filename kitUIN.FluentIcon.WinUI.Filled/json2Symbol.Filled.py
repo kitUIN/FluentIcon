@@ -9,7 +9,7 @@ res = ["""namespace FluentIcon.WinUI
     /// <summary>
     /// 图标枚举<br/>
     /// From json2Symbol.Filled.py<br/>
-    /// Font Version: 1.1.224<br/>
+    /// Font Version: 1.1.269<br/>
     /// Json File Path:<seealso cref="https://github.com/microsoft/fluentui-system-icons/blob/main/fonts/FluentSystemIcons-Filled.json"/>
     /// </summary>
     public enum FluentFilledIconSymbol
@@ -28,5 +28,5 @@ res.append("""    }
 }
 """)
 print(res_file)
-with open(res_file,"w") as f:
+with open(res_file,"w",encoding="utf8") as f:
     f.writelines(res)
